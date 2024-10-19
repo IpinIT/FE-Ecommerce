@@ -154,7 +154,7 @@ class _ProductPageState extends State<ProductPage> {
                                                               .imageUrl.length,
                                                           (index) => Padding(
                                                                 padding: const EdgeInsets
-                                                                        .symmetric(
+                                                                    .symmetric(
                                                                     horizontal:
                                                                         4),
                                                                 child:
@@ -222,7 +222,7 @@ class _ProductPageState extends State<ProductPage> {
                                                     itemSize: 22,
                                                     itemPadding:
                                                         const EdgeInsets
-                                                                .symmetric(
+                                                            .symmetric(
                                                             horizontal: 1),
                                                     itemBuilder: (context, _) =>
                                                         const Icon(
@@ -361,7 +361,7 @@ class _ProductPageState extends State<ProductPage> {
                                                                   Colors.black,
                                                               padding:
                                                                   const EdgeInsets
-                                                                          .symmetric(
+                                                                      .symmetric(
                                                                       vertical:
                                                                           8),
                                                               selected: sizes[
@@ -382,9 +382,6 @@ class _ProductPageState extends State<ProductPage> {
                                                                       .add(sizes[
                                                                           'size']);
                                                                 }
-                                                                print(
-                                                                    productNotifier
-                                                                        .sizes);
                                                                 productNotifier
                                                                     .toggleCheck(
                                                                         index);
@@ -456,7 +453,6 @@ class _ProductPageState extends State<ProductPage> {
                                                         "price": sneaker.price,
                                                         "qty": 1
                                                       });
-                                                      print(sneaker.name);
                                                       productNotifier.sizes
                                                           .clear();
                                                       Navigator.pop(context);
