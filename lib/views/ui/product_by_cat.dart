@@ -40,10 +40,10 @@ class _ProductByCatState extends State<ProductByCat>
   @override
   void initState() {
     super.initState();
-     _tabController.animateTo(widget.tabIndex, curve: Curves.easeIn);
+    _tabController.animateTo(widget.tabIndex, curve: Curves.easeIn);
     getMale();
     getkids();
-   
+
     getFemale();
   }
 
@@ -62,7 +62,6 @@ class _ProductByCatState extends State<ProductByCat>
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
       body: SizedBox(
@@ -137,9 +136,9 @@ class _ProductByCatState extends State<ProductByCat>
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
                 child: TabBarView(controller: _tabController, children: [
-                  latestShoes(male: _male),
-                  latestShoes(male: _female),
-                  latestShoes(male: _kids),
+                  LatestShoes(male: _male),
+                  LatestShoes(male: _female),
+                  LatestShoes(male: _kids),
                 ]),
               ),
             )
@@ -150,7 +149,7 @@ class _ProductByCatState extends State<ProductByCat>
   }
 
   Future<dynamic> filter() {
-    double _value = 100;
+    double value = 100;
     return showModalBottomSheet(
         context: context,
         isScrollControlled: true,
@@ -194,8 +193,8 @@ class _ProductByCatState extends State<ProductByCat>
                         const SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          children: const [
+                        const Row(
+                          children: [
                             CategoryBtn(
                               label: "Men",
                               buttonClr: Colors.black,
@@ -218,8 +217,8 @@ class _ProductByCatState extends State<ProductByCat>
                         const SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          children: const [
+                        const Row(
+                          children: [
                             CategoryBtn(
                               label: "Shoes",
                               buttonClr: Colors.black,
@@ -241,16 +240,16 @@ class _ProductByCatState extends State<ProductByCat>
                         ),
                         const CustomSpacer(),
                         Slider(
-                            value: _value,
+                            value: value,
                             activeColor: Colors.black,
                             inactiveColor: Colors.grey,
                             thumbColor: Colors.black,
                             max: 500,
                             divisions: 50,
-                            label: _value.toString(),
+                            label: value.toString(),
                             secondaryTrackValue: 200,
                             onChanged: (double value) {}),
-                        CustomSpacer(),
+                        const CustomSpacer(),
                         Text(
                           "Brand",
                           style: appstyle(20, Colors.black, FontWeight.bold),
@@ -259,18 +258,18 @@ class _ProductByCatState extends State<ProductByCat>
                           height: 20,
                         ),
                         Container(
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           height: 80,
                           child: ListView.builder(
                               itemCount: brand.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(8),
                                   child: Container(
                                     decoration: BoxDecoration(
                                         color: Colors.grey.shade200,
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(12))),
                                     child: Image.asset(
                                       brand[index],
